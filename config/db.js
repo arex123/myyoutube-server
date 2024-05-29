@@ -5,10 +5,9 @@ import mongoose from "mongoose";
 
 export default function connectDB() {
   //SNazet6PiCDcvscT
-  let url = "mongodb+srv://user_1122:SNazet6PiCDcvscT@cluster0.t6fnq8q.mongodb.net/db"
-
+ 
   try {
-    mongoose.connect(url, {
+    mongoose.connect(process.env.Mongodb_url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -18,7 +17,7 @@ export default function connectDB() {
   }
   const dbConnection = mongoose.connection;
   dbConnection.once("open", (_) => {
-    console.log(`Database connected: ${url}`);
+    console.log(`Database connected: ${process.env.Mongodb_url}`);
   });
 
   dbConnection.on("error", (err) => {
