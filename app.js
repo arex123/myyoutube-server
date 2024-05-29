@@ -14,11 +14,25 @@ import videosRoutes from './routes/videos.js'
 import commentRoutes from './routes/comments.js'
 import authRoutes from './routes/auth.js'
 
-
+app.use(express.json())
 app.use("/api/users",userRoutes)
 app.use("/api/videos",videosRoutes)
 app.use("/api/comments",commentRoutes)
 app.use("/api/auth",authRoutes)
+
+
+//error Middleware
+app.use((err,req,res,next)=>{
+  const status = err.status || 500;
+  const message = err.message || "Something went wrong!";
+  return res.status(status).json({
+    succcess:false,
+    status,
+    message
+  })
+})
+
+
 
 app.get("/", (req, res) => {
   console.log("hello");
