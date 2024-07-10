@@ -15,6 +15,7 @@ import commentRoutes from './routes/comments.js'
 import authRoutes from './routes/auth.js'
 import cookieParser from 'cookie-parser'
 
+console.log("18")
 
 app.use(cookieParser())
 app.use(express.json())
@@ -223,9 +224,6 @@ app.post("/removeCourse", async (req, res) => {
     res.json({removed:false})
   }
 
-
-
-
   // const newCourse = new CourseModel(req.body);
   // try {
   //   await newCourse.save();
@@ -238,6 +236,7 @@ app.post("/removeCourse", async (req, res) => {
   //     message: e,
   //   });
   // }
+
 });
 
 const port = 1231;

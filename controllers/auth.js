@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import User from "../models/User.js";
 import jwt from 'jsonwebtoken'
+import {createError} from '../error.js'
 export const signup = async (req, res, next) => {
   console.log(req.body);
 
