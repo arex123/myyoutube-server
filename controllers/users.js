@@ -6,7 +6,7 @@ export const updateUser =async (req,res,next)=>{
     if(req.params.id==req.user.id){
 
         try{
-            console.log("req body ",req.body)
+            // console.log("req body ",req.body)
             const updatedUser = await User.findByIdAndUpdate(req.params.id,{
                 $set:req.body
             },{
