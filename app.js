@@ -15,7 +15,6 @@ import commentRoutes from './routes/comments.js'
 import authRoutes from './routes/auth.js'
 import cookieParser from 'cookie-parser'
 
-console.log("18")
 
 app.use(cookieParser())
 app.use(express.json())
