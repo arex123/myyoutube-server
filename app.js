@@ -186,19 +186,7 @@ catch(e){
   res.json({saved:false})
 
 }
-  // const newData = await data.json()
-  // const newCourse = new CourseModel(req.body);
-  // try {
-  //   await newCourse.save();
-  //   res.json({
-  //     status: "successfull",
-  //   });
-  // } catch (e) {
-  //   res.json({
-  //     status: "failed",
-  //     message: e,
-  //   });
-  // }
+ 
 });
 app.post("/removeCourse", async (req, res) => {
   console.log("removing course body ", req.body);
